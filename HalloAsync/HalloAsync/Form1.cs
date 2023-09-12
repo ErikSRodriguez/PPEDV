@@ -1,4 +1,5 @@
 using Microsoft.Data.SqlClient;
+using System.ComponentModel.Design.Serialization;
 using System.Threading.Tasks.Sources;
 
 namespace HalloAsync
@@ -127,14 +128,15 @@ namespace HalloAsync
             var conString = "Server=.;Database=Northwind;Trusted_Connection=True;TrustServerCertificate=true;";
             conString = "Connection Timeout=20;Server=(localdb)\\mssqllocaldb;Database=NORTHWND;Trusted_Connection=True;TrustServerCertificate=true;";
 
-            var con = new SqlConnection(conString);
+            using var con = new SqlConnection(conString);
             try
             {
                 progressBar1.Style = ProgressBarStyle.Marquee;
                 await con.OpenAsync();
 
-                var cmd = con.CreateCommand();
-                cmd.CommandText = "WAITFOR DELAY '00:00:10';SELECT COUNT(*) FROM Customers";
+                using var cmd = con.CreateCommand();
+                cmd.CommandText = $"WAITFOR DELAY '00:00:5';SELECT COUNT(*) FROM Customers WHERE CompanyName LIKE @such";
+                cmd.Parameters.AddWithValue("@such", textBox1.Text + "%");
                 if (await cmd.ExecuteScalarAsync() is int count)
                 {
                     MessageBox.Show($"{count} Customers in DB");
@@ -145,7 +147,9 @@ namespace HalloAsync
                 MessageBox.Show($"Fehler :-(\n{ex.Message}");
             }
             progressBar1.Style = ProgressBarStyle.Blocks;
+        
+        } 
 
-        }
+
     }
 }

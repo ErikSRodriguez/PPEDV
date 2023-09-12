@@ -36,6 +36,7 @@
             button4 = new Button();
             button5 = new Button();
             button6 = new Button();
+            textBox1 = new TextBox();
             SuspendLayout();
             // 
             // progressBar1
@@ -107,7 +108,7 @@
             // 
             // button6
             // 
-            button6.Location = new Point(18, 485);
+            button6.Location = new Point(18, 561);
             button6.Name = "button6";
             button6.Size = new Size(379, 46);
             button6.TabIndex = 7;
@@ -115,11 +116,20 @@
             button6.UseVisualStyleBackColor = true;
             button6.Click += button6_Click;
             // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(20, 505);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(200, 39);
+            textBox1.TabIndex = 8;
+            textBox1.Text = "A";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(415, 543);
+            ClientSize = new Size(415, 619);
+            Controls.Add(textBox1);
             Controls.Add(button6);
             Controls.Add(button5);
             Controls.Add(button4);
@@ -131,6 +141,7 @@
             Name = "Form1";
             Text = "Form1";
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -143,5 +154,6 @@
         private Button button4;
         private Button button5;
         private Button button6;
+        private TextBox textBox1;
     }
 }
