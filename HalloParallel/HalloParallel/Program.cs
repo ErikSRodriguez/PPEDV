@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -7,6 +8,13 @@ internal class Program
     private static void Main(string[] args)
     {
         Console.WriteLine("Hello, World!");
+
+
+        //List<Random> list = new List<Random>();
+        //while (true)
+        //{
+        //    list.Add(new Random());
+        //}
 
         Parallel.For(0, 100_000,
                      i => Console.WriteLine($"{Thread.CurrentThread.ManagedThreadId} - {i}"));
