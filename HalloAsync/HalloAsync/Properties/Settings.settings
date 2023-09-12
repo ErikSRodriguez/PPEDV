@@ -1,0 +1,16 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="HalloAsync.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="Titel" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Settingstitel</Value>
+    </Setting>
+    <Setting Name="ConString" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;
+  &lt;ConnectionString&gt;Connection Timeout=20;Server=(localdb)\\mssqllocaldb;Database=NORTHWND;Trusted_Connection=True;TrustServerCertificate=true;&lt;/ConnectionString&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Connection Timeout=20;Server=(localdb)\\mssqllocaldb;Database=NORTHWND;Trusted_Connection=True;TrustServerCertificate=true;</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
