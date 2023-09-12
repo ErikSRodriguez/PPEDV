@@ -1,0 +1,15 @@
+[‎28.‎03.‎2017 15:13] Jakob Wegenschimmel: 
+https://codeshare.io/Gk0P1w 
+[Test]
+        [Category("Unit")]
+        public void Core_GetAllCountriesThatNotHavePaidSince_Days_MAX_ArgumentOutOfRangeException()
+        {
+            var repository = Substitute.For<IRepository>();
+
+            var core = new Core(repository);
+
+            Assert.Throws<ArgumentOutOfRangeException>(() => core.GetAllCountriesThatNotHavePaidSince(int.MaxValue, DateTime.Now));
+
+            var countDays = (DateTime.Now - new DateTime(1, 1, 1)).Days + 1;
+            Assert.Throws<ArgumentOutOfRangeException>(() => core.GetAllCountriesThatNotHavePaidSince(countDays, DateTime.Now));
+        } 
