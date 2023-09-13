@@ -1,5 +1,6 @@
 using ClosedXML.Excel;
 using ppedv.Personenverwaltung.Contracts;
+using ppedv.Personenverwaltung.Data.EfCore;
 using ppedv.Personenverwaltung.DemoDataSource;
 using System.Text.Json;
 using System.Windows.Forms;
@@ -21,7 +22,11 @@ namespace ppedv.Personenverwaltung.UI.WinForms
             //var typeMitISource = ass.GetTypes().First(x => x.GetInterfaces().Contains(typeof(IPersonenSource)));
             //personenSource = Activator.CreateInstance(typeMitISource) as IPersonenSource;
 
-            bindingSource1.DataSource = personenSource.GetPersons();
+            context = new EfContext();
+            context.Database.EnsureCreated();
+
+            //bindingSource1.DataSource = personenSource.GetPersons();
+            bindingSource1.DataSource = context.Persons.ToList();
             dataGridView1.DataSource = bindingSource1;
 
             vornameTextBox.DataBindings.Add("Text", bindingSource1, nameof(Person.Vorname), false, DataSourceUpdateMode.OnPropertyChanged);
@@ -30,6 +35,7 @@ namespace ppedv.Personenverwaltung.UI.WinForms
             gebDateTimePicker.DataBindings.Add("Value", bindingSource1, nameof(Person.GebDatum), false, DataSourceUpdateMode.OnPropertyChanged);
         }
 
+        EfContext context;
         IPersonenSource personenSource;
 
         private void button1_Click(object sender, EventArgs e)
@@ -146,6 +152,52 @@ namespace ppedv.Personenverwaltung.UI.WinForms
                 }
                 //System.Diagnostics.Process.Start(dlg.FileName);
             }
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            bindingSource1.DataSource = context.Persons.ToList();
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            var person = new Person()
+            {
+                Vorname = "NEU",
+                Nachname = "NEU",
+                GebDatum = DateTime.Now.Date,
+                Stadt = "NEU"
+            };
+
+            bindingSource1.Add(person);
+            context.Add(person);
+
+            context.SaveChanges();
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            context.SaveChanges();
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            if (bindingSource1.Current is Person p)
+            {
+                var msg = $"Soll die Person {p.Nachname} wirklich gelöscht werden?";
+                if (MessageBox.Show(msg, "", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2)
+                    == DialogResult.Yes)
+                {
+                    context.Remove(p);
+                    bindingSource1.Remove(p);
+                }
+            }
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            context.AddRange(new DemoDataGenerator().GetPersons());
+            context.SaveChanges();
         }
     }
 }

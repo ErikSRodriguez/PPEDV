@@ -14,6 +14,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ppedv.Personenverwaltung.Contracts\ppedv.Personenverwaltung.Contracts.csproj" />
+    <ProjectReference Include="..\ppedv.Personenverwaltung.Data.EfCore\ppedv.Personenverwaltung.Data.EfCore.csproj" />
     <ProjectReference Include="..\ppedv.Personenverwaltung.DemoDataSource\ppedv.Personenverwaltung.DemoDataSource.csproj" />
   </ItemGroup>
 

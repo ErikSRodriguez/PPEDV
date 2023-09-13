@@ -12,7 +12,7 @@ namespace ppedv.Personenverwaltung.DemoDataSource
         {
             personFaker = new Faker<Contracts.Person>("es")
                 .UseSeed(7)
-                .CustomInstantiator(x => new Contracts.Person() { Id = idCount++ })
+                //.CustomInstantiator(x => new Contracts.Person() { Id = idCount++ })
                 .RuleFor(x => x.Vorname, x => x.Person.FirstName)
                 .RuleFor(x => x.Nachname, x => x.Person.LastName)
                 .RuleFor(x => x.Stadt, x => x.Address.City())

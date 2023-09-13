@@ -29,13 +29,14 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             flowLayoutPanel1 = new FlowLayoutPanel();
             button1 = new Button();
             button2 = new Button();
             button3 = new Button();
             button5 = new Button();
             button4 = new Button();
+            button6 = new Button();
             dataGridView1 = new DataGridView();
             splitContainer1 = new SplitContainer();
             tableLayoutPanel1 = new TableLayoutPanel();
@@ -48,7 +49,12 @@
             stadtTextBox = new TextBox();
             gebDateTimePicker = new DateTimePicker();
             bindingSource1 = new BindingSource(components);
-            button6 = new Button();
+            button7 = new Button();
+            flowLayoutPanel2 = new FlowLayoutPanel();
+            button8 = new Button();
+            button9 = new Button();
+            button10 = new Button();
+            button11 = new Button();
             flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
@@ -57,6 +63,7 @@
             splitContainer1.SuspendLayout();
             tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)bindingSource1).BeginInit();
+            flowLayoutPanel2.SuspendLayout();
             SuspendLayout();
             // 
             // flowLayoutPanel1
@@ -136,13 +143,25 @@
             button4.UseVisualStyleBackColor = true;
             button4.Click += button4_Click;
             // 
+            // button6
+            // 
+            button6.AutoSize = true;
+            button6.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            button6.Location = new Point(1067, 3);
+            button6.Name = "button6";
+            button6.Size = new Size(166, 42);
+            button6.TabIndex = 5;
+            button6.Text = "Excel Export...";
+            button6.UseVisualStyleBackColor = true;
+            button6.Click += button6_Click;
+            // 
             // dataGridView1
             // 
             dataGridView1.AllowUserToAddRows = false;
             dataGridView1.AllowUserToDeleteRows = false;
             dataGridView1.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = Color.Lavender;
-            dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.BackColor = Color.Lavender;
+            dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Dock = DockStyle.Fill;
             dataGridView1.Location = new Point(0, 0);
@@ -152,14 +171,14 @@
             dataGridView1.RowHeadersWidth = 82;
             dataGridView1.RowTemplate.Height = 41;
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView1.Size = new Size(575, 646);
+            dataGridView1.Size = new Size(575, 598);
             dataGridView1.TabIndex = 1;
             dataGridView1.CellDoubleClick += dataGridView1_CellDoubleClick;
             // 
             // splitContainer1
             // 
             splitContainer1.Dock = DockStyle.Fill;
-            splitContainer1.Location = new Point(0, 48);
+            splitContainer1.Location = new Point(0, 96);
             splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
@@ -169,7 +188,7 @@
             // splitContainer1.Panel2
             // 
             splitContainer1.Panel2.Controls.Add(tableLayoutPanel1);
-            splitContainer1.Size = new Size(1726, 646);
+            splitContainer1.Size = new Size(1726, 598);
             splitContainer1.SplitterDistance = 575;
             splitContainer1.TabIndex = 2;
             // 
@@ -196,7 +215,7 @@
             tableLayoutPanel1.RowStyles.Add(new RowStyle());
             tableLayoutPanel1.RowStyles.Add(new RowStyle());
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel1.Size = new Size(1147, 646);
+            tableLayoutPanel1.Size = new Size(1147, 598);
             tableLayoutPanel1.TabIndex = 0;
             // 
             // label1
@@ -272,17 +291,81 @@
             gebDateTimePicker.Size = new Size(1006, 39);
             gebDateTimePicker.TabIndex = 7;
             // 
-            // button6
+            // button7
             // 
-            button6.AutoSize = true;
-            button6.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            button6.Location = new Point(1067, 3);
-            button6.Name = "button6";
-            button6.Size = new Size(166, 42);
-            button6.TabIndex = 5;
-            button6.Text = "Excel Export...";
-            button6.UseVisualStyleBackColor = true;
-            button6.Click += button6_Click;
+            button7.AutoSize = true;
+            button7.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            button7.Location = new Point(3, 3);
+            button7.Name = "button7";
+            button7.Size = new Size(283, 42);
+            button7.TabIndex = 6;
+            button7.Text = "Personen aus DB landen";
+            button7.UseVisualStyleBackColor = true;
+            button7.Click += button7_Click;
+            // 
+            // flowLayoutPanel2
+            // 
+            flowLayoutPanel2.AutoSize = true;
+            flowLayoutPanel2.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            flowLayoutPanel2.BackColor = Color.PaleTurquoise;
+            flowLayoutPanel2.Controls.Add(button7);
+            flowLayoutPanel2.Controls.Add(button8);
+            flowLayoutPanel2.Controls.Add(button9);
+            flowLayoutPanel2.Controls.Add(button10);
+            flowLayoutPanel2.Controls.Add(button11);
+            flowLayoutPanel2.Dock = DockStyle.Top;
+            flowLayoutPanel2.Location = new Point(0, 48);
+            flowLayoutPanel2.Name = "flowLayoutPanel2";
+            flowLayoutPanel2.Size = new Size(1726, 48);
+            flowLayoutPanel2.TabIndex = 3;
+            // 
+            // button8
+            // 
+            button8.AutoSize = true;
+            button8.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            button8.Location = new Point(292, 3);
+            button8.Name = "button8";
+            button8.Size = new Size(196, 42);
+            button8.TabIndex = 7;
+            button8.Text = "Add new Person";
+            button8.UseVisualStyleBackColor = true;
+            button8.Click += button8_Click;
+            // 
+            // button9
+            // 
+            button9.AutoSize = true;
+            button9.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            button9.Location = new Point(494, 3);
+            button9.Name = "button9";
+            button9.Size = new Size(130, 42);
+            button9.TabIndex = 8;
+            button9.Text = "Speichern";
+            button9.UseVisualStyleBackColor = true;
+            button9.Click += button9_Click;
+            // 
+            // button10
+            // 
+            button10.AutoSize = true;
+            button10.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            button10.Location = new Point(630, 3);
+            button10.Name = "button10";
+            button10.Size = new Size(267, 42);
+            button10.TabIndex = 9;
+            button10.Text = "Delete selected Person";
+            button10.UseVisualStyleBackColor = true;
+            button10.Click += button10_Click;
+            // 
+            // button11
+            // 
+            button11.AutoSize = true;
+            button11.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            button11.Location = new Point(903, 3);
+            button11.Name = "button11";
+            button11.Size = new Size(235, 42);
+            button11.TabIndex = 10;
+            button11.Text = "Import Demo daten";
+            button11.UseVisualStyleBackColor = true;
+            button11.Click += button11_Click;
             // 
             // Form1
             // 
@@ -290,6 +373,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1726, 694);
             Controls.Add(splitContainer1);
+            Controls.Add(flowLayoutPanel2);
             Controls.Add(flowLayoutPanel1);
             Name = "Form1";
             Text = "Form1";
@@ -304,6 +388,8 @@
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)bindingSource1).EndInit();
+            flowLayoutPanel2.ResumeLayout(false);
+            flowLayoutPanel2.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -329,5 +415,11 @@
         private Button button4;
         private Button button5;
         private Button button6;
+        private Button button7;
+        private FlowLayoutPanel flowLayoutPanel2;
+        private Button button8;
+        private Button button9;
+        private Button button10;
+        private Button button11;
     }
 }
