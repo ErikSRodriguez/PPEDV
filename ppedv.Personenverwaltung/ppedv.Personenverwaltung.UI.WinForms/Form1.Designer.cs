@@ -32,6 +32,10 @@
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             flowLayoutPanel1 = new FlowLayoutPanel();
             button1 = new Button();
+            button2 = new Button();
+            button3 = new Button();
+            button5 = new Button();
+            button4 = new Button();
             dataGridView1 = new DataGridView();
             splitContainer1 = new SplitContainer();
             tableLayoutPanel1 = new TableLayoutPanel();
@@ -44,6 +48,7 @@
             stadtTextBox = new TextBox();
             gebDateTimePicker = new DateTimePicker();
             bindingSource1 = new BindingSource(components);
+            button6 = new Button();
             flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
@@ -60,6 +65,11 @@
             flowLayoutPanel1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             flowLayoutPanel1.BackColor = Color.NavajoWhite;
             flowLayoutPanel1.Controls.Add(button1);
+            flowLayoutPanel1.Controls.Add(button2);
+            flowLayoutPanel1.Controls.Add(button3);
+            flowLayoutPanel1.Controls.Add(button5);
+            flowLayoutPanel1.Controls.Add(button4);
+            flowLayoutPanel1.Controls.Add(button6);
             flowLayoutPanel1.Dock = DockStyle.Top;
             flowLayoutPanel1.Location = new Point(0, 0);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
@@ -77,6 +87,54 @@
             button1.Text = "Demodaten laden";
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
+            // 
+            // button2
+            // 
+            button2.AutoSize = true;
+            button2.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            button2.Location = new Point(225, 3);
+            button2.Name = "button2";
+            button2.Size = new Size(234, 42);
+            button2.TabIndex = 1;
+            button2.Text = "Als XML speichern...";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
+            // 
+            // button3
+            // 
+            button3.AutoSize = true;
+            button3.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            button3.Location = new Point(465, 3);
+            button3.Name = "button3";
+            button3.Size = new Size(164, 42);
+            button3.TabIndex = 2;
+            button3.Text = "XML öffnen...";
+            button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
+            // 
+            // button5
+            // 
+            button5.AutoSize = true;
+            button5.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            button5.Location = new Point(635, 3);
+            button5.Name = "button5";
+            button5.Size = new Size(245, 42);
+            button5.TabIndex = 4;
+            button5.Text = "Als JSON speichern...";
+            button5.UseVisualStyleBackColor = true;
+            button5.Click += button5_Click;
+            // 
+            // button4
+            // 
+            button4.AutoSize = true;
+            button4.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            button4.Location = new Point(886, 3);
+            button4.Name = "button4";
+            button4.Size = new Size(175, 42);
+            button4.TabIndex = 3;
+            button4.Text = "JSON öffnen...";
+            button4.UseVisualStyleBackColor = true;
+            button4.Click += button4_Click;
             // 
             // dataGridView1
             // 
@@ -214,6 +272,18 @@
             gebDateTimePicker.Size = new Size(1006, 39);
             gebDateTimePicker.TabIndex = 7;
             // 
+            // button6
+            // 
+            button6.AutoSize = true;
+            button6.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            button6.Location = new Point(1067, 3);
+            button6.Name = "button6";
+            button6.Size = new Size(166, 42);
+            button6.TabIndex = 5;
+            button6.Text = "Excel Export...";
+            button6.UseVisualStyleBackColor = true;
+            button6.Click += button6_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
@@ -254,5 +324,10 @@
         private TextBox stadtTextBox;
         private DateTimePicker gebDateTimePicker;
         private BindingSource bindingSource1;
+        private Button button2;
+        private Button button3;
+        private Button button4;
+        private Button button5;
+        private Button button6;
     }
 }
