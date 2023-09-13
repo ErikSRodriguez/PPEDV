@@ -6,6 +6,7 @@ using System.Text.Json;
 using System.Windows.Forms;
 using System.Xml.Linq;
 using System.Xml.Serialization;
+using Tools;
 
 namespace ppedv.Personenverwaltung.UI.WinForms
 {
@@ -52,7 +53,7 @@ namespace ppedv.Personenverwaltung.UI.WinForms
         {
             if (bindingSource1.Current is Person p)
             {
-                MessageBox.Show(p.Nachname);
+                MessageBox.Show(p.Nachname + " " + p.GebDatum.GetKw());
             }
 
         }
