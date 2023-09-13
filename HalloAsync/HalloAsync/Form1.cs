@@ -115,7 +115,8 @@ namespace HalloAsync
         {
             try
             {
-                MessageBox.Show($"Slow:{await CalcValuesVerySlowAsync(122)}");
+                long res = (await CalcValuesVerySlowAsync(122));
+                MessageBox.Show($"Slow:{res}");
             }
             catch (Exception)
             {

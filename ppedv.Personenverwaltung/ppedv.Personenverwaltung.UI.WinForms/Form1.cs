@@ -1,4 +1,5 @@
 using ppedv.Personenverwaltung.Contracts;
+using ppedv.Personenverwaltung.DemoDataSource;
 using System.Reflection;
 
 namespace ppedv.Personenverwaltung.UI.WinForms
@@ -10,11 +11,11 @@ namespace ppedv.Personenverwaltung.UI.WinForms
             InitializeComponent();
 
 
-            //personenSource = new DemoDataGenerator();
-            var pfad = @"C:\Users\Fred\source\repos\CSharpFortgeschrittene_228438\ppedv.Personenverwaltung\ppedv.Personenverwaltung.DemoDataSource\bin\Debug\net7.0\ppedv.Personenverwaltung.DemoDataSource.dll";
-            var ass = Assembly.LoadFrom(pfad);
-            var typeMitISource = ass.GetTypes().First(x => x.GetInterfaces().Contains(typeof(IPersonenSource)));
-            personenSource = Activator.CreateInstance(typeMitISource) as IPersonenSource;
+            personenSource = new DemoDataGenerator();
+            //var pfad = @"C:\Users\Fred\source\repos\CSharpFortgeschrittene_228438\ppedv.Personenverwaltung\ppedv.Personenverwaltung.DemoDataSource\bin\Debug\net7.0\ppedv.Personenverwaltung.DemoDataSource.dll";
+            //var ass = Assembly.LoadFrom(pfad);
+            //var typeMitISource = ass.GetTypes().First(x => x.GetInterfaces().Contains(typeof(IPersonenSource)));
+            //personenSource = Activator.CreateInstance(typeMitISource) as IPersonenSource;
         }
 
         IPersonenSource personenSource;
@@ -22,6 +23,11 @@ namespace ppedv.Personenverwaltung.UI.WinForms
         private void button1_Click(object sender, EventArgs e)
         {
             dataGridView1.DataSource = personenSource.GetPersons().ToList();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
