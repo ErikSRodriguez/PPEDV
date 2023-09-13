@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             flowLayoutPanel1 = new FlowLayoutPanel();
             button1 = new Button();
@@ -38,10 +39,11 @@
             label2 = new Label();
             label3 = new Label();
             label4 = new Label();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
-            dateTimePicker1 = new DateTimePicker();
+            vornameTextBox = new TextBox();
+            nachnameTextBox = new TextBox();
+            stadtTextBox = new TextBox();
+            gebDateTimePicker = new DateTimePicker();
+            bindingSource1 = new BindingSource(components);
             flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
@@ -49,6 +51,7 @@
             splitContainer1.Panel2.SuspendLayout();
             splitContainer1.SuspendLayout();
             tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)bindingSource1).BeginInit();
             SuspendLayout();
             // 
             // flowLayoutPanel1
@@ -93,6 +96,7 @@
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView1.Size = new Size(575, 646);
             dataGridView1.TabIndex = 1;
+            dataGridView1.CellDoubleClick += dataGridView1_CellDoubleClick;
             // 
             // splitContainer1
             // 
@@ -121,10 +125,10 @@
             tableLayoutPanel1.Controls.Add(label2, 0, 1);
             tableLayoutPanel1.Controls.Add(label3, 0, 2);
             tableLayoutPanel1.Controls.Add(label4, 0, 3);
-            tableLayoutPanel1.Controls.Add(textBox1, 1, 0);
-            tableLayoutPanel1.Controls.Add(textBox2, 1, 1);
-            tableLayoutPanel1.Controls.Add(textBox3, 1, 2);
-            tableLayoutPanel1.Controls.Add(dateTimePicker1, 1, 3);
+            tableLayoutPanel1.Controls.Add(vornameTextBox, 1, 0);
+            tableLayoutPanel1.Controls.Add(nachnameTextBox, 1, 1);
+            tableLayoutPanel1.Controls.Add(stadtTextBox, 1, 2);
+            tableLayoutPanel1.Controls.Add(gebDateTimePicker, 1, 3);
             tableLayoutPanel1.Dock = DockStyle.Fill;
             tableLayoutPanel1.Location = new Point(0, 0);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -177,38 +181,38 @@
             label4.TabIndex = 3;
             label4.Text = "GebDatum";
             // 
-            // textBox1
+            // vornameTextBox
             // 
-            textBox1.Dock = DockStyle.Fill;
-            textBox1.Location = new Point(138, 3);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(1006, 39);
-            textBox1.TabIndex = 4;
+            vornameTextBox.Dock = DockStyle.Fill;
+            vornameTextBox.Location = new Point(138, 3);
+            vornameTextBox.Name = "vornameTextBox";
+            vornameTextBox.Size = new Size(1006, 39);
+            vornameTextBox.TabIndex = 4;
             // 
-            // textBox2
+            // nachnameTextBox
             // 
-            textBox2.Dock = DockStyle.Fill;
-            textBox2.Location = new Point(138, 48);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(1006, 39);
-            textBox2.TabIndex = 5;
+            nachnameTextBox.Dock = DockStyle.Fill;
+            nachnameTextBox.Location = new Point(138, 48);
+            nachnameTextBox.Name = "nachnameTextBox";
+            nachnameTextBox.Size = new Size(1006, 39);
+            nachnameTextBox.TabIndex = 5;
             // 
-            // textBox3
+            // stadtTextBox
             // 
-            textBox3.Dock = DockStyle.Fill;
-            textBox3.Location = new Point(138, 93);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(1006, 39);
-            textBox3.TabIndex = 6;
+            stadtTextBox.Dock = DockStyle.Fill;
+            stadtTextBox.Location = new Point(138, 93);
+            stadtTextBox.Name = "stadtTextBox";
+            stadtTextBox.Size = new Size(1006, 39);
+            stadtTextBox.TabIndex = 6;
             // 
-            // dateTimePicker1
+            // gebDateTimePicker
             // 
-            dateTimePicker1.Dock = DockStyle.Fill;
-            dateTimePicker1.Format = DateTimePickerFormat.Short;
-            dateTimePicker1.Location = new Point(138, 138);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(1006, 39);
-            dateTimePicker1.TabIndex = 7;
+            gebDateTimePicker.Dock = DockStyle.Fill;
+            gebDateTimePicker.Format = DateTimePickerFormat.Short;
+            gebDateTimePicker.Location = new Point(138, 138);
+            gebDateTimePicker.Name = "gebDateTimePicker";
+            gebDateTimePicker.Size = new Size(1006, 39);
+            gebDateTimePicker.TabIndex = 7;
             // 
             // Form1
             // 
@@ -229,6 +233,7 @@
             splitContainer1.ResumeLayout(false);
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)bindingSource1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -244,9 +249,10 @@
         private Label label2;
         private Label label3;
         private Label label4;
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private TextBox textBox3;
-        private DateTimePicker dateTimePicker1;
+        private TextBox vornameTextBox;
+        private TextBox nachnameTextBox;
+        private TextBox stadtTextBox;
+        private DateTimePicker gebDateTimePicker;
+        private BindingSource bindingSource1;
     }
 }
