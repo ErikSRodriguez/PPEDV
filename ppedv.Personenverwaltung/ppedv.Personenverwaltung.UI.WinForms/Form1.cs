@@ -181,7 +181,10 @@ namespace ppedv.Personenverwaltung.UI.WinForms
 
         private void button9_Click(object sender, EventArgs e)
         {
-            context.SaveChanges();
+            var rowCount = context.SaveChanges();
+
+            Program.Log.Information("SaveChanges {rowCount}", rowCount);
+
         }
 
         private void button10_Click(object sender, EventArgs e)
