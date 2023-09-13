@@ -1,4 +1,5 @@
 using ClosedXML.Excel;
+using Microsoft.EntityFrameworkCore;
 using ppedv.Personenverwaltung.Contracts;
 using ppedv.Personenverwaltung.Data.EfCore;
 using ppedv.Personenverwaltung.DemoDataSource;
@@ -157,6 +158,8 @@ namespace ppedv.Personenverwaltung.UI.WinForms
 
         private void button7_Click(object sender, EventArgs e)
         {
+            //earger loading
+            //bindingSource1.DataSource = context.Persons.Include(x => x.Land).ToList();
             bindingSource1.DataSource = context.Persons.ToList();
         }
 
@@ -214,9 +217,20 @@ namespace ppedv.Personenverwaltung.UI.WinForms
         private void button13_Click(object sender, EventArgs e)
         {
             bindingSource1.DataSource = context.Persons.Where(x => x.GebDatum.Year < 2000)
-                                                       .OrderByDescending(x => x.GebDatum.Year)
+                                                       .OrderByDescending(x => x.Land.Name)
                                                        .ThenBy(x => x.Nachname)
                                                        .ToList();
+        }
+
+        private void dataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (dataGridView1.Columns[e.ColumnIndex].HeaderText == nameof(Person.Land))
+            {
+                if (e.Value is Land l)
+                {
+                    e.Value = l.Name;
+                }
+            }
         }
     }
 }

@@ -7,5 +7,6 @@
         public string Nachname { get; set; } = string.Empty;
         public DateTime GebDatum { get; set; }
         public string? Stadt { get; set; }
+        public virtual Land? Land { get; set; }
     }
 }
