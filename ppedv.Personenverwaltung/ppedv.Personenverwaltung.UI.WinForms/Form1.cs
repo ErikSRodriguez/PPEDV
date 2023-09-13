@@ -199,5 +199,23 @@ namespace ppedv.Personenverwaltung.UI.WinForms
             context.AddRange(new DemoDataGenerator().GetPersons());
             context.SaveChanges();
         }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            var query = from p in context.Persons
+                        where p.GebDatum.Year < 2000
+                        orderby p.GebDatum.Year descending, p.Nachname
+                        select p;
+
+            bindingSource1.DataSource = query.ToList();
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            bindingSource1.DataSource = context.Persons.Where(x => x.GebDatum.Year < 2000)
+                                                       .OrderByDescending(x => x.GebDatum.Year)
+                                                       .ThenBy(x => x.Nachname)
+                                                       .ToList();
+        }
     }
 }

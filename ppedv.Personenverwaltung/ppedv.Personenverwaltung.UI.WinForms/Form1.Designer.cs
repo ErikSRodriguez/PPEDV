@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             flowLayoutPanel1 = new FlowLayoutPanel();
             button1 = new Button();
             button2 = new Button();
@@ -55,6 +55,8 @@
             button9 = new Button();
             button10 = new Button();
             button11 = new Button();
+            button12 = new Button();
+            button13 = new Button();
             flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
@@ -160,8 +162,8 @@
             dataGridView1.AllowUserToAddRows = false;
             dataGridView1.AllowUserToDeleteRows = false;
             dataGridView1.AllowUserToResizeRows = false;
-            dataGridViewCellStyle2.BackColor = Color.Lavender;
-            dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.BackColor = Color.Lavender;
+            dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Dock = DockStyle.Fill;
             dataGridView1.Location = new Point(0, 0);
@@ -171,14 +173,14 @@
             dataGridView1.RowHeadersWidth = 82;
             dataGridView1.RowTemplate.Height = 41;
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView1.Size = new Size(575, 598);
+            dataGridView1.Size = new Size(575, 550);
             dataGridView1.TabIndex = 1;
             dataGridView1.CellDoubleClick += dataGridView1_CellDoubleClick;
             // 
             // splitContainer1
             // 
             splitContainer1.Dock = DockStyle.Fill;
-            splitContainer1.Location = new Point(0, 96);
+            splitContainer1.Location = new Point(0, 144);
             splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
@@ -188,7 +190,7 @@
             // splitContainer1.Panel2
             // 
             splitContainer1.Panel2.Controls.Add(tableLayoutPanel1);
-            splitContainer1.Size = new Size(1726, 598);
+            splitContainer1.Size = new Size(1726, 550);
             splitContainer1.SplitterDistance = 575;
             splitContainer1.TabIndex = 2;
             // 
@@ -215,7 +217,7 @@
             tableLayoutPanel1.RowStyles.Add(new RowStyle());
             tableLayoutPanel1.RowStyles.Add(new RowStyle());
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel1.Size = new Size(1147, 598);
+            tableLayoutPanel1.Size = new Size(1147, 550);
             tableLayoutPanel1.TabIndex = 0;
             // 
             // label1
@@ -313,10 +315,12 @@
             flowLayoutPanel2.Controls.Add(button9);
             flowLayoutPanel2.Controls.Add(button10);
             flowLayoutPanel2.Controls.Add(button11);
+            flowLayoutPanel2.Controls.Add(button12);
+            flowLayoutPanel2.Controls.Add(button13);
             flowLayoutPanel2.Dock = DockStyle.Top;
             flowLayoutPanel2.Location = new Point(0, 48);
             flowLayoutPanel2.Name = "flowLayoutPanel2";
-            flowLayoutPanel2.Size = new Size(1726, 48);
+            flowLayoutPanel2.Size = new Size(1726, 96);
             flowLayoutPanel2.TabIndex = 3;
             // 
             // button8
@@ -366,6 +370,30 @@
             button11.Text = "Import Demo daten";
             button11.UseVisualStyleBackColor = true;
             button11.Click += button11_Click;
+            // 
+            // button12
+            // 
+            button12.AutoSize = true;
+            button12.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            button12.Location = new Point(1144, 3);
+            button12.Name = "button12";
+            button12.Size = new Size(510, 42);
+            button12.TabIndex = 11;
+            button12.Text = "Alle die vor 2000 Gebtag hatten [LINQ Query]";
+            button12.UseVisualStyleBackColor = true;
+            button12.Click += button12_Click;
+            // 
+            // button13
+            // 
+            button13.AutoSize = true;
+            button13.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            button13.Location = new Point(3, 51);
+            button13.Name = "button13";
+            button13.Size = new Size(469, 42);
+            button13.TabIndex = 12;
+            button13.Text = "Alle die vor 2000 Gebtag hatten [Lambda]";
+            button13.UseVisualStyleBackColor = true;
+            button13.Click += button13_Click;
             // 
             // Form1
             // 
@@ -421,5 +449,7 @@
         private Button button9;
         private Button button10;
         private Button button11;
+        private Button button12;
+        private Button button13;
     }
 }
